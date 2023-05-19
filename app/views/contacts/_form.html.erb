@@ -1,0 +1,35 @@
+<section class="container">
+  <%= form_with(model: contact) do |form| %>
+    <article class="row">
+      <section class="col-12 d-flex justify-content-center">
+        <% if contact.errors.any? %>
+          <h2 class="fs-2"><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+          <ul>
+            <% contact.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </section>
+      <section class="col-12 ">
+        <%= form.label :first_name, class: 'form-label' %>
+        <%= form.text_field :first_name, class: 'form-control', required: true %>
+      </section>
+
+      <section class="col-12">
+        <%= form.label :last_name, class: 'form-label' %>
+        <%= form.text_field :last_name, class: 'form-control', required: true %>
+      </section>
+
+      <section class="col-12">
+        <%= form.label :phone_number, class: 'form-label' %>
+        <%= form.telephone_field :phone_number, class: 'form-control', required: true %>
+      </section>
+
+      <section class="col-12">
+        <%= form.submit 'Submit' , class: 'bg-primary btn btn-primary mt-3 w-100' %>
+      </section>
+    </article>
+  <% end %>
+</section>

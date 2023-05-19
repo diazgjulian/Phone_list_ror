@@ -1,0 +1,13 @@
+<section class="container w-50 p-6">
+  <article class="row">
+    <section class="col-12 d-flex justify-content-center">
+      <h1 class="fs-1">New contact</h1>
+    </section>
+    <section class="col-12">
+      <%= render "form", contact: @contact %>
+    </section>
+    <section class="col-12 d-flex justify-content-center align-items-center">
+      <%= link_to "Back to contacts", contacts_path %>
+    </section>
+  </article>
+</section>

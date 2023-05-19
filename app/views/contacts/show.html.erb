@@ -1,0 +1,16 @@
+<section class="container w-50">
+  <article class="row">
+    <section class="col-12 d-flex justify-content-center">
+      <%= turbo_stream_from @contact %>
+    </section>
+    <section class="col-12 d-flex justify-content-center">
+      <p id="notice"><%= notice %></p>
+    </section>
+    <section class="col-12">
+      <%= render @contact %>
+    </section>
+    <section class="col-12 d-flex justify-content-center align-items-center">
+      <%= link_to "Back to contacts", contacts_path %>
+    </section>
+  </article>
+</section>

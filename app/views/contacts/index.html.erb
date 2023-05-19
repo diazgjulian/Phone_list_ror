@@ -1,0 +1,29 @@
+<section class="container w-50 p-6">
+  <article class="row">
+    <section class="col-12 d-flex justify-content-center mt-6 mb-6">
+      <h1 class="fs-1"><i class="fa fa-address-book"></i> Phone Book App</h1>
+    </section>
+    <section class="col-12 d-flex justify-content-between align-items-center mt-6 mb-6">
+      <h2 class="fs-2"> Contacts</h2>
+      <%= link_to "<i class='fa fa-plus'></i> Add Contact".html_safe, new_contact_path, class:'btn btn-primary' %>
+    </section>
+    <section class="col-12 mb-6">
+      <p id="notice"><%= notice %></p>
+    </section>
+    <section class="col-12 mb-6">
+        <%= form_with(url: "/", method: :get, data:{action:"submit->search#submit"}) do |f| %>
+      <article data-controller="hello" class="input-group">
+          <%= text_field_tag :query, params[:query], data: {target: "search.query"}, class:'form-control border', placeholder:'Search for contact by last name' %>
+          <button type="submit" class="btn btn-primary bg-primary border border-0">
+              <i class="fa fa-search"></i>
+          </button>
+      </article>
+        <% end %>
+    </section>
+    <section class="col-12 mb-6">
+      <article data-search-target="search.contacts">
+        <%= render @contacts %>
+      </article>
+    </section>
+  </article>
+<section>

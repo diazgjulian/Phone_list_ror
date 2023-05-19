@@ -1,0 +1,21 @@
+
+<section class="container card mb-6 p-3">
+  <article class="row">
+    <section class="col-10">
+      <article class="row">
+        <section class="col-12">
+          <h2 class="fs-2"><%= link_to "#{contact.first_name} #{contact.last_name}", contact, class:"" %></h2>
+        </section>
+      </article>
+      <article class="row">
+        <section class="col-12">
+          <p><i class="fa-solid fa-phone"></i> <%= contact.phone_number %></p>
+        </section>
+      </article>
+    </section>
+    <section class="col-2 d-flex justify-content-between align-items-center">
+      <%= link_to '<i class="fa fa-file-pen"></i>'.html_safe, edit_contact_path(contact), class: 'btn btn-primary' %>
+      <%= button_to '<i class="fa fa-trash"></i>'.html_safe, contact_path(contact), method: :delete, class: 'bg-danger btn btn-danger' %>
+    </section>
+  </article>
+</section>
